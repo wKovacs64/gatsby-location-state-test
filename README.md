@@ -14,3 +14,5 @@ yarn test
 ```sh
 yarn test:gui
 ```
+
+## [View results on Circle CI](https://circleci.com/gh/wKovacs64/gatsby-location-state-test/3)
