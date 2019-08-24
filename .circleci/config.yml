@@ -7,7 +7,14 @@ workflows:
   build:
     jobs:
       - cypress/run:
+          name: dev
           store_artifacts: true
           yarn: true
           start: yarn develop
+          wait-on: "--timeout 20000 http://localhost:8000"
+      - cypress/run:
+          name: prod
+          store_artifacts: true
+          yarn: true
+          start: yarn serve
           wait-on: "--timeout 20000 http://localhost:8000"
