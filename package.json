@@ -5,24 +5,25 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "2.9.4",
-    "gatsby-image": "^2.1.4",
-    "gatsby-plugin-manifest": "^2.1.1",
-    "gatsby-plugin-offline": "^2.1.3",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sharp": "^2.1.5",
-    "gatsby-source-filesystem": "^2.0.39",
-    "gatsby-transformer-sharp": "^2.1.21",
+    "gatsby": "2.13.80",
+    "gatsby-image": "^2.2.13",
+    "gatsby-plugin-manifest": "^2.2.9",
+    "gatsby-plugin-offline": "^2.2.10",
+    "gatsby-plugin-react-helmet": "^3.1.5",
+    "gatsby-plugin-sharp": "^2.2.17",
+    "gatsby-source-filesystem": "^2.1.16",
+    "gatsby-transformer-sharp": "^2.2.11",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "@testing-library/cypress": "4.0.3",
-    "cypress": "3.3.1",
+    "cypress": "3.4.1",
+    "npm-run-all": "4.1.5",
     "prettier": "^1.18.2",
-    "start-server-and-test": "1.9.1"
+    "start-server-and-test": "1.10.0"
   },
   "keywords": [
     "gatsby"
@@ -35,11 +36,16 @@
     "cy:run": "cypress run",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
+    "prebuild": "npm run clean",
+    "predevelop": "npm run clean",
+    "preserve": "npm run build",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "npm run test:headless",
-    "test:gui": "start-server-and-test develop 8000 cy:open",
-    "test:headless": "start-server-and-test develop 8000 cy:run"
+    "serve": "gatsby serve --port 8000",
+    "test": "npm-run-all --sequential --silent test:headless:dev test:headless:prod",
+    "test:gui:dev": "start-server-and-test develop 8000 cy:open",
+    "test:gui:prod": "start-server-and-test serve 8000 cy:open",
+    "test:headless:dev": "start-server-and-test develop 8000 cy:run",
+    "test:headless:prod": "start-server-and-test serve 8000 cy:run"
   },
   "repository": {
     "type": "git",

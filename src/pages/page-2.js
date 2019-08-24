@@ -10,8 +10,12 @@ const SecondPage = ({ location }) => (
     <h1>Hi from the second page</h1>
     <p>Welcome to page 2</p>
     <p>
-      Location state (should never be null):{" "}
-      <strong>{JSON.stringify(location.state)}</strong>
+      Location state (should never be <code>undefined</code>):{" "}
+      <strong>
+        {typeof location.state === "undefined"
+          ? "undefined"
+          : JSON.stringify(location.state)}
+      </strong>
     </p>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
