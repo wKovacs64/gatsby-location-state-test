@@ -6,15 +6,21 @@ orbs:
 workflows:
   build:
     jobs:
+      - cypress/install:
+          yarn: true
       - cypress/run:
           name: dev
+          requires:
+            - cypress/install
           store_artifacts: true
           yarn: true
           start: yarn develop
-          wait-on: "--timeout 20000 http://localhost:8000"
+          wait-on: "--timeout 30000 http://localhost:8000"
       - cypress/run:
           name: prod
+          requires:
+            - cypress/install
           store_artifacts: true
           yarn: true
           start: yarn serve
-          wait-on: "--timeout 20000 http://localhost:8000"
+          wait-on: "--timeout 30000 http://localhost:8000"

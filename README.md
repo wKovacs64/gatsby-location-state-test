@@ -34,4 +34,4 @@ yarn test:gui:dev
 yarn test:gui:prod
 ```
 
-## [View results on Circle CI](https://circleci.com/gh/wKovacs64/gatsby-location-state-test/8)
+## [View results on Circle CI](https://circleci.com/gh/wKovacs64/gatsby-location-state-test)
