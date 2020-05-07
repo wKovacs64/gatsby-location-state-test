@@ -25,7 +25,7 @@ One report of the issue resurfacing in Gatsby v2.19.28 (2020-03-13) and another
 implicating v2.20.24. However, I was unable to reproduce it in v2.19.28 (project
 would not even build due to a `Cannot read property 'activities' of undefined`
 error) nor v2.20.24 (everything worked as expected). Updated the `gatsby`
-package in this reproduction project to `2.20.4` to demonstrate success.
+package in this reproduction project to `2.20.24` to demonstrate success.
 
 ---
 
