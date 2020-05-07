@@ -14,6 +14,19 @@ specifically) for development mode (`gatsby develop`) but is still broken in
 production (`gatsby build` output). Also, instead of `null`, `location.state` is
 now `undefined`.
 
+#### 2019-11-06: Update 2
+
+Both development and production started working somewhere between Update 1 and
+Gatsby v2.17.10. Closed https://github.com/gatsbyjs/gatsby/issues/14815.
+
+#### 2020-05-07: Update 3
+
+One report of the issue resurfacing in Gatsby v2.19.28 (2020-03-13) and another
+implicating v2.20.24. However, I was unable to reproduce it in v2.19.28 (project
+would not even build due to a `Cannot read property 'activities' of undefined`
+error) nor v2.20.24 (everything worked as expected). Updated the `gatsby`
+package in this reproduction project to `2.20.4` to demonstrate success.
+
 ---
 
 In this simple reproduction,
